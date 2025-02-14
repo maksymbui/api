@@ -41,19 +41,18 @@ mesh = SubResource("BoxMesh_yvbdo")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 12, 1)
 shadow_enabled = true
-directional_shadow_pancake_size = 1.1
 
 [node name="Player" parent="." instance=ExtResource("1_mj40f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 
 [node name="CameraPivot" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -2.12132, 20.5061)
-projection = 1
-size = 30.0
-far = 40.0
+fov = 51.4
+size = 22.188
+far = 34.0
 
 [node name="SpawnPath" type="Path3D" parent="."]
 curve = SubResource("Curve3D_eorf3")
