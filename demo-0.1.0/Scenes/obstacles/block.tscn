@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2oc8rqq6n60p"]
+
+[ext_resource type="Material" path="res://Assets/Texture/body.material" id="1_wxool"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h1fdp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_h0lhk"]
+material = ExtResource("1_wxool")
+
+[node name="Obstacle" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Block" type="StaticBody3D" parent="." groups=["blocks"]]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block"]
+shape = SubResource("BoxShape3D_h1fdp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Block"]
+mesh = SubResource("BoxMesh_h0lhk")

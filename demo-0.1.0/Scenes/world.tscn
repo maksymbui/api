@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnkn7k7jai2ur"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_3x553"]
+[ext_resource type="PackedScene" uid="uid://l2bwismadct3" path="res://Scenes/player.tscn" id="2_p0lst"]
+[ext_resource type="Script" path="res://Scripts/score_label.gd" id="4_lveoq"]
+[ext_resource type="PackedScene" uid="uid://c4c5tiq83bxfl" path="res://Scenes/terrain_controller.tscn" id="19_j4at1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qtp48"]
+sky_top_color = Color(0.386015, 0.605932, 0.752606, 1)
+sky_horizon_color = Color(0.646504, 0.693733, 0.721401, 1)
+sky_energy_multiplier = 2.25
+ground_horizon_color = Color(0.646504, 0.693733, 0.721401, 1)
+
+[sub_resource type="Sky" id="Sky_6j0di"]
+sky_material = SubResource("ProceduralSkyMaterial_qtp48")
+
+[sub_resource type="Environment" id="Environment_j02m7"]
+background_mode = 2
+sky = SubResource("Sky_6j0di")
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_3x553")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0.500003, -0.749999, 0.43301, -7.45058e-08, 0.499998, 0.866027, 0, 5, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j02m7")
+
+[node name="TerrainController" parent="." instance=ExtResource("19_j4at1")]
+
+[node name="Player" parent="." instance=ExtResource("2_p0lst")]
+MOVE_SPEED = 10.0
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.5
+offset_right = 30.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Score: 0"
+script = ExtResource("4_lveoq")
+
+[node name="Retry" type="ColorRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.470588)
+
+[node name="Label" type="Label" parent="UI/Retry"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Please press Enter/Space to restart"
+
+[node name="MainTimer" type="Timer" parent="."]
+
+[connection signal="hit" from="Player" to="." method="_on_character_body_3d_hit"]
+[connection signal="timeout" from="MainTimer" to="." method="_on_main_timer_timeout"]

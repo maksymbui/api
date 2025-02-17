@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds8rl5coiuonm"]
+
+[ext_resource type="Script" path="res://Scripts/terrain.gd" id="1_pui7i"]
+[ext_resource type="PackedScene" uid="uid://c2oc8rqq6n60p" path="res://Scenes/obstacles/block.tscn" id="2_uf3sa"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_giae8"]
+size = Vector2(100, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_eluvk"]
+data = PackedVector3Array(50, 0, 10, -50, 0, 10, 50, 0, -10, -50, 0, 10, -50, 0, -10, 50, 0, -10)
+
+[node name="Terrain" type="MeshInstance3D"]
+layers = 7
+mesh = SubResource("PlaneMesh_giae8")
+script = ExtResource("1_pui7i")
+block = ExtResource("2_uf3sa")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("ConcavePolygonShape3D_eluvk")
