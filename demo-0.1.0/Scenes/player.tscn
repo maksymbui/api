@@ -1,6 +1,6 @@
 [gd_scene load_steps=40 format=4 uid="uid://l2bwismadct3"]
 
-[ext_resource type="Script" path="res://Scripts/playerv.gd" id="1_eugb8"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_eugb8"]
 [ext_resource type="Texture2D" uid="uid://chcciv4ook5a" path="res://Assets/Human/untitled_Remy_Body_Diffuse.png" id="2_sfcx3"]
 [ext_resource type="Texture2D" uid="uid://c0gtlunnimuxi" path="res://Assets/Human/untitled_Remy_Body_Gloss.png" id="3_7ycg0"]
 [ext_resource type="Texture2D" uid="uid://b2l6h57o4clj4" path="res://Assets/Human/untitled_Remy_Body_Normal.png" id="4_tn5nj"]
