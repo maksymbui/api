@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://brr5s7gw4re5g"]
+
+[ext_resource type="AudioStream" uid="uid://cw3ptpfqjv5tk" path="res://Assets/Stage BGM_Battle Theme #7 - GunBound OST [2o2OHUyPczU].mp3" id="1_25r5b"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_25r5b")
+volume_db = -30.0
+autoplay = true

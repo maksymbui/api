@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4c5tiq83bxfl"]
+
+[ext_resource type="Script" path="res://Scripts/terrain_controller.gd" id="1_pjcxs"]
+[ext_resource type="PackedScene" uid="uid://ds8rl5coiuonm" path="res://Scenes/terrain.tscn" id="2_0a8na"]
+
+[node name="TerrainController" type="Node3D"]
+script = ExtResource("1_pjcxs")
+terrain = ExtResource("2_0a8na")
+
+[node name="TerrainGenTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="TerrainGenTimer" to="." method="_on_terrain_gen_timer_timeout"]
