@@ -1,2 +1,2 @@
 # runner
-Repo for all godot repos
+Repo for all godot projects
