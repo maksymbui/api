@@ -34,7 +34,6 @@ environment = SubResource("Environment_j02m7")
 [node name="TerrainController" parent="." instance=ExtResource("19_j4at1")]
 
 [node name="Player" parent="." instance=ExtResource("2_p0lst")]
-MOVE_SPEED = 10.0
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
