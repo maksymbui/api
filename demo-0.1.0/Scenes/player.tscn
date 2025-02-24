@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://l2bwismadct3"]
+[gd_scene load_steps=38 format=4 uid="uid://l2bwismadct3"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_eugb8"]
 [ext_resource type="Texture2D" uid="uid://chcciv4ook5a" path="res://Assets/Human/untitled_Remy_Body_Diffuse.png" id="2_sfcx3"]
@@ -1173,74 +1173,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../BodyCollision:position")
+tracks/0/path = NodePath("../CollisionShape3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 2.19, -0.07)]
+"values": [Vector3(0, 2.14993, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../HeadCollision:position")
+tracks/1/path = NodePath("../CollisionShape3D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.04, 3.04, -0.63)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../HeadCollision:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.274016, -0.0383973, 0.0226893)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../BodyCollision:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.314159, 0, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../LegCollision:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.025, -0.435)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../LegCollision:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.671952, 0, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_w833j"]
@@ -1865,74 +1817,26 @@ tracks/87/keys = PackedFloat32Array(0, 1, 0.440793, -0.00486684, 0.0790022, 0.89
 tracks/88/type = "value"
 tracks/88/imported = false
 tracks/88/enabled = true
-tracks/88/path = NodePath("../BodyCollision:position")
+tracks/88/path = NodePath("../CollisionShape3D:position")
 tracks/88/interp = 1
 tracks/88/loop_wrap = true
 tracks/88/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.166667, 0.3, 0.533333, 2),
+"times": PackedFloat32Array(0, 0.2, 0.633333, 1, 1.96667, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 2.19, -0.07), Vector3(0, 2.19, -0.0295038), Vector3(0, 1.95101, -0.0309248), Vector3(0, 1.454, 0.0441656), Vector3(0, 0.606334, -0.25458), Vector3(0, 2.19, -0.07)]
+"values": [Vector3(0, 2.14993, 0), Vector3(0, 1.575, -0.235), Vector3(0, 0.786, -0.177), Vector3(0, 0.696, -0.128), Vector3(0, 2.14993, 0), Vector3(0, 2.14993, 0)]
 }
 tracks/89/type = "value"
 tracks/89/imported = false
 tracks/89/enabled = true
-tracks/89/path = NodePath("../HeadCollision:position")
+tracks/89/path = NodePath("../CollisionShape3D:rotation")
 tracks/89/interp = 1
 tracks/89/loop_wrap = true
 tracks/89/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.166667, 0.3, 0.533333, 2),
+"times": PackedFloat32Array(0, 0.2, 0.633333, 1, 1.96667, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.04, 3.04, -0.63), Vector3(-0.04, 3.20725, -0.328902), Vector3(-0.04, 3.0434, -0.209595), Vector3(-0.04, 2.36012, -0.105178), Vector3(-0.04, 1.13811, -0.177213), Vector3(-0.04, 3.04, -0.63)]
-}
-tracks/90/type = "value"
-tracks/90/imported = false
-tracks/90/enabled = true
-tracks/90/path = NodePath("../HeadCollision:rotation")
-tracks/90/interp = 1
-tracks/90/loop_wrap = true
-tracks/90/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.166667, 0.3, 0.533333, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.274016, -0.0383973, 0.0226893), Vector3(0.274016, -0.0383973, 0.0226893), Vector3(0.274016, -0.0383973, 0.0226893), Vector3(0.274016, -0.0383973, 0.0226893), Vector3(0.274016, -0.0383973, 0.0226893), Vector3(0.274016, -0.0383973, 0.0226893)]
-}
-tracks/91/type = "value"
-tracks/91/imported = false
-tracks/91/enabled = true
-tracks/91/path = NodePath("../BodyCollision:rotation")
-tracks/91/interp = 1
-tracks/91/loop_wrap = true
-tracks/91/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.166667, 0.3, 0.533333, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.314159, 0, 0), Vector3(0.127933, 0, 0), Vector3(0.186615, 0, 0), Vector3(0.150195, 0, 0), Vector3(1.14989, 0, 0), Vector3(-0.314159, 0, 0)]
-}
-tracks/92/type = "value"
-tracks/92/imported = false
-tracks/92/enabled = true
-tracks/92/path = NodePath("../LegCollision:position")
-tracks/92/interp = 1
-tracks/92/loop_wrap = true
-tracks/92/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.166667, 0.3, 0.533333, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 1.025, -0.435), Vector3(0, 1.025, -0.435), Vector3(0, 0.715866, -0.693698), Vector3(0, 0.738349, -1.09296), Vector3(0, 0.316128, -1.1678), Vector3(0, 1.025, -0.435)]
-}
-tracks/93/type = "value"
-tracks/93/imported = false
-tracks/93/enabled = true
-tracks/93/path = NodePath("../LegCollision:rotation")
-tracks/93/interp = 1
-tracks/93/loop_wrap = true
-tracks/93/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.166667, 0.3, 0.533333, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.671952, 0, 0), Vector3(0.0729726, 0, 0), Vector3(0.707508, 0, 0), Vector3(0.936579, 0, 0), Vector3(1.45726, 0, 0), Vector3(0.671952, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0.671952, 0, 0), Vector3(1.35438, 0, 0), Vector3(1.23395, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_g4bvp"]
@@ -2669,19 +2573,12 @@ _data = {
 "running": SubResource("Animation_g4bvp")
 }
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_7ftva"]
-radius = 0.4
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3yom6"]
-radius = 0.4
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8nrmr"]
-radius = 0.4
-height = 2.2
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1362n"]
+height = 3.8
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
-collision_mask = 6
+collision_mask = 7
 script = ExtResource("1_eugb8")
 
 [node name="Human" type="Node3D" parent="."]
@@ -2919,7 +2816,7 @@ bones/32/name = "mixamorig_LeftHandPinky4"
 bones/32/parent = 31
 bones/32/rest = Transform3D(1, 1.12602e-14, -2.32802e-13, -1.12602e-14, 1, -2.45627e-16, 2.32802e-13, 2.45627e-16, 1, 2.1281e-05, 5.56355, -3.54447e-06)
 bones/32/enabled = true
-bones/32/position = Vector3(2.17191e-05, 5.56353, -5.14842e-06)
+bones/32/position = Vector3(2.10038e-05, 5.56353, -3.06226e-06)
 bones/32/rotation = Quaternion(1.22813e-16, -1.16401e-13, -5.63009e-15, 1)
 bones/32/scale = Vector3(1, 1, 1)
 bones/33/name = "mixamorig_RightShoulder"
@@ -3087,7 +2984,7 @@ bones/56/name = "mixamorig_RightHandPinky4"
 bones/56/parent = 55
 bones/56/rest = Transform3D(1, -1.79643e-06, 1.79645e-06, 1.79645e-06, 1, -9.58095e-06, -1.79643e-06, 9.58095e-06, 1, 1.70186e-06, 6.37046, 4.82915e-07)
 bones/56/enabled = true
-bones/56/position = Vector3(-3.38155e-06, 6.37045, -5.11107e-06)
+bones/56/position = Vector3(1.24733e-05, 6.37045, -5.58799e-06)
 bones/56/rotation = Quaternion(4.79048e-06, 8.9822e-07, 8.98219e-07, 1)
 bones/56/scale = Vector3(1, 1, 1)
 bones/57/name = "mixamorig_LeftUpLeg"
@@ -3196,17 +3093,9 @@ libraries = {
 autoplay = "running"
 blend_times = [&"Slide", &"running", 0.5]
 
-[node name="HeadCollision" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.99877, -0.0330557, -0.0369557, 0.0218409, 0.962444, -0.2706, 0.0445126, 0.26946, 0.961982, -0.04, 3.04, -0.63)
-shape = SubResource("SphereShape3D_7ftva")
-
-[node name="BodyCollision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.951057, 0.309017, 0, -0.309017, 0.951057, 0, 2.19, -0.07)
-shape = SubResource("CapsuleShape3D_3yom6")
-
-[node name="LegCollision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.782608, -0.622515, 0, 0.622515, 0.782608, 0, 1.025, -0.435)
-shape = SubResource("CapsuleShape3D_8nrmr")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.14993, 0)
+shape = SubResource("CapsuleShape3D_1362n")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 5, 6)
@@ -3220,6 +3109,13 @@ one_shot = true
 
 [node name="LandTimer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="ClimbTimer" type="Timer" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.6986, 0)
+light_color = Color(0.791, 0.327514, 0, 1)
+omni_range = 26.0382
 
 [connection signal="timeout" from="SlideTimer" to="." method="_on_slide_timer_timeout"]
 [connection signal="timeout" from="LandTimer" to="." method="_on_land_timer_timeout"]

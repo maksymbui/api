@@ -1,23 +1,64 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds8rl5coiuonm"]
+[gd_scene load_steps=9 format=3 uid="uid://ds8rl5coiuonm"]
 
 [ext_resource type="Script" path="res://Scripts/terrain.gd" id="1_pui7i"]
 [ext_resource type="PackedScene" uid="uid://c2oc8rqq6n60p" path="res://Scenes/obstacles/block.tscn" id="2_uf3sa"]
+[ext_resource type="PackedScene" uid="uid://qpeq8xgxpfch" path="res://Scenes/obstacles/train.tscn" id="3_xt3qm"]
+[ext_resource type="PackedScene" uid="uid://cus5mpjsfm6ws" path="res://Scenes/obstacles/high_block.tscn" id="4_5rgus"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11wto"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_giae8"]
-size = Vector2(100, 20)
+material = SubResource("StandardMaterial3D_11wto")
+size = Vector2(30, 51.97)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_eluvk"]
-data = PackedVector3Array(50, 0, 10, -50, 0, 10, 50, 0, -10, -50, 0, 10, -50, 0, -10, 50, 0, -10)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ouwxq"]
+size = Vector3(30, 1, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qee0s"]
+size = Vector3(5.445, 4.905, 50.215)
 
 [node name="Terrain" type="MeshInstance3D"]
 layers = 7
+lod_bias = 128.0
 mesh = SubResource("PlaneMesh_giae8")
 script = ExtResource("1_pui7i")
 block = ExtResource("2_uf3sa")
+train = ExtResource("3_xt3qm")
+high_block = ExtResource("4_5rgus")
 
 [node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.035, 0, 0, 0)
 collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-shape = SubResource("ConcavePolygonShape3D_eluvk")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_ouwxq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2957, 0, 0)
+mesh = SubResource("BoxMesh_qee0s")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2957, 0, 0)
+mesh = SubResource("BoxMesh_qee0s")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4354, 0, 0)
+mesh = SubResource("BoxMesh_qee0s")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 10.9923, 0)
+radius = 20.358
+height = 51.959
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D"]
+operation = 2
+radius = 19.0
+height = 59.67
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(-0.000194099, 0.00455123, 0.99999, 0.999092, 0.0426081, -9.92217e-11, -0.0426077, 0.999081, -0.00455534, 0.900139, -7.62692e-07, -17.4484)
+operation = 2
+radius = 9.274
+height = 13.17

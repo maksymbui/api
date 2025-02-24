@@ -19,6 +19,10 @@ config/icon="res://Assets/icon.svg"
 
 BackgroundMusic="*res://Scenes/background_music.tscn"
 
+[global_group]
+
+blocks=""
+
 [input]
 
 jump={
@@ -42,3 +46,10 @@ jump={
 3d_physics/layer_1="player"
 3d_physics/layer_2="enemies"
 3d_physics/layer_3="world"
+3d_physics/layer_4="train"
+
+[rendering]
+
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=5
+lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv=5
+lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv=5

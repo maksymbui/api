@@ -5,35 +5,37 @@
 [ext_resource type="Script" path="res://Scripts/score_label.gd" id="4_lveoq"]
 [ext_resource type="PackedScene" uid="uid://c4c5tiq83bxfl" path="res://Scenes/terrain_controller.tscn" id="19_j4at1"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qtp48"]
-sky_top_color = Color(0.386015, 0.605932, 0.752606, 1)
-sky_horizon_color = Color(0.646504, 0.693733, 0.721401, 1)
-sky_energy_multiplier = 2.25
-ground_horizon_color = Color(0.646504, 0.693733, 0.721401, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_f4j70"]
 
-[sub_resource type="Sky" id="Sky_6j0di"]
-sky_material = SubResource("ProceduralSkyMaterial_qtp48")
+[sub_resource type="Sky" id="Sky_h0qyb"]
+sky_material = SubResource("PanoramaSkyMaterial_f4j70")
 
-[sub_resource type="Environment" id="Environment_j02m7"]
+[sub_resource type="Environment" id="Environment_5oetm"]
 background_mode = 2
-sky = SubResource("Sky_6j0di")
-ssao_enabled = true
-sdfgi_enabled = true
+sky = SubResource("Sky_h0qyb")
+tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.0687983, 0.0687983, 0.0687983, 1)
+fog_density = 1.0
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_3x553")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0.500003, -0.749999, 0.43301, -7.45058e-08, 0.499998, 0.866027, 0, 5, 0)
-shadow_enabled = true
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_j02m7")
+environment = SubResource("Environment_5oetm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.487732, 0.862692, 0.133714, -0.12685, -0.221576, 0.966858, 0.863728, 0.454606, 0.217502, 0, 3.12208, 0)
+light_color = Color(0.999999, 0.850299, 0.732588, 1)
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 9.0
+shadow_enabled = true
+directional_shadow_blend_splits = true
+directional_shadow_pancake_size = 2.2
 
 [node name="TerrainController" parent="." instance=ExtResource("19_j4at1")]
-
-[node name="Player" parent="." instance=ExtResource("2_p0lst")]
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -81,5 +83,10 @@ text = "Please press Enter/Space to restart"
 
 [node name="MainTimer" type="Timer" parent="."]
 
-[connection signal="hit" from="Player" to="." method="_on_character_body_3d_hit"]
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_p0lst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.339665)
+
 [connection signal="timeout" from="MainTimer" to="." method="_on_main_timer_timeout"]
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]

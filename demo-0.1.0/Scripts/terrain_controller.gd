@@ -19,7 +19,7 @@ func _init_blocks() -> void:
 	for block_index in 10:
 		var block = terrain.instantiate()
 		
-		if block_index < 3:
+		if block_index < 1:
 			block.generate_empty()
 		else:
 			block.generate_obstacles()
@@ -32,11 +32,11 @@ func _init_blocks() -> void:
 		terrain_render.append(block)
 
 func _progress_terrain(delta: float):	
-	terrain_velocity += 0.01
+	terrain_velocity += 0.001
 	for block in terrain_render:
 		block.position.z += terrain_velocity * delta
 		
-	if terrain_render[0].position.z >= terrain_render[0].mesh.size.y/2:
+	if terrain_render[0].position.z >= terrain_render[0].mesh.size.y+100:
 		var last_terrain = terrain_render[-1]
 		var first_terrain = terrain_render.pop_front()
 		
@@ -45,7 +45,7 @@ func _progress_terrain(delta: float):
 		append_to_edge(last_terrain, block)
 		add_child(block)
 		terrain_render.append(block)
-		first_terrain.queue_free() 
+		first_terrain.queue_free()
 
 func append_to_edge(target_block: MeshInstance3D, appending_block: MeshInstance3D) -> void:
 	appending_block.position.z = target_block.position.z - target_block.mesh.size.y/2 - appending_block.mesh.size.y/2	
